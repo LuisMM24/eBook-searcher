@@ -1,0 +1,41 @@
+.homeContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.titleContainer {
+  align-items: center;
+  .title__img {
+    width: 100px;
+    height: auto;
+  }
+}
+
+.form {
+  width: 30%;
+  gap: 10px;
+  margin-bottom: 150px;
+
+  .inputSearcher {
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  .buttonSearcher {
+    img {
+      width: 20px;
+      height: auto;
+    }
+    width: 20%;
+    border-radius: 2px;
+    border: 1px solid #94d2bd;
+    padding: 10px;
+    background-color: #94d2bd;
+  }
+}
