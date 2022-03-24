@@ -1,7 +1,22 @@
-const { Users } = require("../models/")
+const db = require("../models/")
 
-function signUp(req, res, next) {
+async function signUp(req, res, next) {
+    const { email, uid } = req.user
+    try {
+        const user = db.Users.find({ _id: uid })
 
+        if (user) {
+            res.sendStatus(200)
+        } else {
+            await db.Users.create({
+                _id: uid,
+                email: email
+            })
+            res.sendStatus(201)
+        }
+    } catch (err) {
+        next(err)
+    }
 }
 
 module.exports = {
