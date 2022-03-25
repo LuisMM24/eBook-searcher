@@ -3,8 +3,8 @@ const db = require("../models/")
 async function signUp(req, res, next) {
     const { email, uid } = req.user
     try {
-        const user = db.Users.find({ _id: uid })
-
+        const user = await db.Users.findOne({ _id: uid })
+        console.log(user)
         if (user) {
             res.sendStatus(200)
         } else {

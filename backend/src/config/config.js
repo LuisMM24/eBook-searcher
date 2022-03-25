@@ -1,16 +1,16 @@
 require("dotenv/config")
 
 const firebaseServiceConfig = {
-    FB_CERT_CERT_TYPE: process.env.FB_CERT_CERT_TYPE,
-    FB_CERT_PROJECT_ID: process.env.FB_CERT_PROJECT_ID,
-    FB_CERT_PRIVATE_KEY_ID: process.env.FB_CERT_PRIVATE_KEY_ID,
-    FB_CERT_PRIVATE_KEY: process.env.FB_CERT_PRIVATE_KEY,
-    FB_CERT_CLIENT_EMAIL: process.env.FB_CERT_CLIENT_EMAIL,
-    FB_CERT_CLIENT_ID: process.env.FB_CERT_CLIENT_ID,
-    FB_CERT_AUTH_URI: process.env.FB_CERT_AUTH_URI,
-    FB_CERT_TOKEN_URI: process.env.FB_CERT_TOKEN_URI,
-    FB_CERT_AUTH_PROVIDER_X_509_CERT_URL: process.env.FB_CERT_AUTH_PROVIDER_X_509_CERT_URL,
-    FB_CERT_CLIENT_X_509_CERT_URL: process.env.FB_CERT_CLIENT_X_509_CERT_URL
+    type: process.env.FB_CERT_CERT_TYPE,
+    project_id: process.env.FB_CERT_PROJECT_ID,
+    private_key_id: process.env.FB_CERT_PRIVATE_KEY_ID,
+    private_key: process.env.FB_CERT_PRIVATE_KEY,
+    client_email: process.env.FB_CERT_CLIENT_EMAIL,
+    client_id: process.env.FB_CERT_CLIENT_ID,
+    auth_uri: process.env.FB_CERT_AUTH_URI,
+    token_uri: process.env.FB_CERT_TOKEN_URI,
+    auth_provider_x509_cert_url: process.env.FB_CERT_AUTH_PROVIDER_X_509_CERT_URL,
+    client_x509_cert_url: process.env.FB_CERT_CLIENT_X_509_CERT_URL
 }
 
 module.exports = {
