@@ -19,9 +19,10 @@ export default function Home() {
     try {
       await signUpWithGoogle();
       await syncUserData();
-      setError(null);
     } catch (err) {
       setError(err.message);
+    } finally {
+      setError(undefined);
     }
   };
 
@@ -31,12 +32,11 @@ export default function Home() {
       setError("You have to be registered to search ebooks!");
     }
   };
-
   return (
     <>
       {error && <div className="errorContainer">{error}</div>}
       <main className="homeContainer">
-        <button onClick={signOut}>Sign Out</button>
+        {currentUser && <button onClick={signOut}>Sign Out</button>}
         <div className="titleContainer elementsInline">
           <img className="title__img" src={ebookIcon} alt="ebook icon" />
           <h1>Welcome to eBook-Searcher</h1>
@@ -56,7 +56,7 @@ export default function Home() {
           </button>
         </form>
         {!currentUser && <SignUp googleSign={handleSubmitWithGoogle} />}
-        {currentUser && <h3>Your email is: {currentUser}</h3>}
+        {currentUser && <h3>You're logged in: {currentUser.displayName}</h3>}
       </main>
     </>
   );
